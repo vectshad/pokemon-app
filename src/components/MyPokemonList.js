@@ -17,9 +17,9 @@ function MyPokemonList () {
                 {pokemons.pokemons.map((pokemon, index) => 
                     <div key={index} className="Pokemon">
                         <Link to={{pathname: `/detail/${pokemon.name}`}}>
-                            <img src={pokemon.sprites.front_default} alt="pokemon"/>
+                            <img src={pokemon.image} alt="pokemon"/>
                         </Link>
-                        <p>{pokemon.name}</p>
+                        <p>{pokemon.nickname}</p>
                     </div>
                 )}
             </div>
