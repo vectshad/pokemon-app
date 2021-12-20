@@ -1,12 +1,14 @@
 import React from "react";
 import '../styles/Header.css';
 import logo from '../assets/pokemon.png';
+import { Link } from 'react-router-dom';
+
 function Header () {
     return (
         <div className="navbar">
-            <a href="/">
+            <Link to="/">
                 <img src={ logo } className="Logo" alt="Pokemon"/>
-            </a>
+            </Link>
         </div>
     )
 }
