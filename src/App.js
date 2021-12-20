@@ -8,6 +8,7 @@ import PokemonDetail from './components/PokemonDetail';
 import MyPokemonList from './components/MyPokemonList';
 
 import './App.css';
+import PokemonContextProvider from './contexts/PokemonContext';
 
 function App() {
   const gqlVariables = {
@@ -22,31 +23,20 @@ function App() {
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
-  console.log('Response from server', data.pokemons.results);
+  // console.log('Response from server', data.pokemons.results);
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          {data.pokemon.name} */}
-        {/* </p> */}
-        {/* <ul>
-        // {data.pokemons.results.map((pokemon) => 
-        //     <li>
-        //       {pokemon.name}
-        //     </li>
-        //   )}
-        // </ul> */}
-      {/* </header> */}
+      <PokemonContextProvider>
       <BrowserRouter>
         <Header/>
         <Routes>
           <Route path='/' element={<PokemonList pokemons={data.pokemons.results}/>}/>
           <Route path='/detail/:name' element={<PokemonDetail/>}/>
-          <Route path='/list' element={<MyPokemonList pokemons={data.pokemons.results}/>}/>
+          <Route path='/list' element={<MyPokemonList/>}/>
         </Routes>
       </BrowserRouter>
+      </PokemonContextProvider>
     </div>
   );
 }
