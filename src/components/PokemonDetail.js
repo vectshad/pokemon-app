@@ -33,8 +33,20 @@ function PokemonDetail () {
             
             <h2>Pokemon Detail</h2>
             <div className="Detail">
-                <h3>{name}</h3>
+                <h2>{name}</h2>
                 <img src={data.pokemon.sprites.front_default}alt="pokemon"/>
+                <h3>Types</h3>
+                <div className="Types">
+                    {data.pokemon.types.map((type, index) =>
+                        <p key={index}>{type.type.name}</p>
+                    )}
+                </div>
+                <h3>Moves</h3>
+                <div>
+                    {data.pokemon.moves.map((move, index) =>
+                        <p key={index}>{move.move.name}</p>
+                    )}
+                </div>
             </div>
         </div>
     )

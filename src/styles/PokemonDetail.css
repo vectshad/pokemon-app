@@ -27,7 +27,18 @@
 }
 .Detail img {
     width: 50%;
-    height: 50%;
+    height: auto;
+    margin: 0;
+}
+
+.Types {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Types p {
+    margin: 0 15px;
 }
 
 /* small tablet styles */
