@@ -6,10 +6,12 @@ import { PokemonContext } from "../contexts/PokemonContext";
 function MyPokemonList () {
     const pokemons = useContext(PokemonContext);
 
-    // console.log(pokemons);
     return (
         <div className="PokemonList">
             <h2>My Pokemon</h2>
+            <div>
+                <p>Owned Total: {pokemons.pokemons.length}</p>
+            </div>
             <div className="Container">
                 {pokemons.pokemons.length === 0 &&
                     <h3>No Pokemon !!!</h3>
