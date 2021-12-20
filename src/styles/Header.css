@@ -1,0 +1,35 @@
+/* mobile styles */
+.navbar {
+    background: #ef5350;
+    padding-top: 6px;
+    padding-left: 40px;
+    color: white;
+    height: 50px;
+    width: auto;
+    align-items: center;
+}
+
+.Logo {
+    width: 100px;
+}
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+    p {
+        background: yellow;
+    }
+}
+
+/*  large tablets & laptop styles */
+@media screen and (min-width: 960px) {
+    p {
+        background: blue;
+    }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px) {
+    p {
+        background: green;
+    }
+}
