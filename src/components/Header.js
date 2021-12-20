@@ -9,6 +9,12 @@ function Header () {
             <Link to="/">
                 <img src={ logo } className="Logo" alt="Pokemon"/>
             </Link>
+            <Link to="/">
+                <button>Home</button>
+            </Link>
+            <Link to="/list">
+                <button>My Pokemon</button>
+            </Link>
         </div>
     )
 }
