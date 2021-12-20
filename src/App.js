@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { GET_POKEMON_DETAIL } from './graphql/pokemon';
+import { GET_POKEMONS } from './graphql/pokemon';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -9,22 +9,20 @@ import MyPokemonList from './components/MyPokemonList';
 
 import './App.css';
 
-
-const gqlVariables = {
-  name: 'bulbasaur',
-  // limit: 20,
-  // offset: 0,
-};
-
 function App() {
-  const { loading, error, data } = useQuery(GET_POKEMON_DETAIL, {
+  const gqlVariables = {
+    limit: 20,
+    offset: 0,
+  };
+  
+  const { loading, error, data } = useQuery(GET_POKEMONS, {
     variables: gqlVariables,
   });
 
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
 
-  console.log('Response from server', data.pokemon);
+  console.log('Response from server', data.pokemons.results);
 
   return (
     <div className="App">
@@ -44,8 +42,8 @@ function App() {
       <BrowserRouter>
         <Header/>
         <Routes>
-          <Route path='/' element={<PokemonList/>}/>
-          <Route path='/detail' element={<PokemonDetail/>}/>
+          <Route path='/' element={<PokemonList pokemons={data.pokemons.results}/>}/>
+          <Route path='/detail/:name' element={<PokemonDetail/>}/>
           <Route path='/list' element={<MyPokemonList/>}/>
         </Routes>
       </BrowserRouter>
