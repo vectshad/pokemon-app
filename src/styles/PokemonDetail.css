@@ -31,6 +31,14 @@
     margin: 0;
 }
 
+.Detail button {
+    background: #ffce00;
+    border: 1px solid #636363;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .Types {
     display: flex;
     align-items: center;
