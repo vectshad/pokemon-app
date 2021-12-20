@@ -14,7 +14,6 @@ class PokemonContextProvider extends Component {
     }
 
     render () {
-        console.log(this.state.pokemons)
         return (
             <PokemonContext.Provider value={{...this.state, handlePokemon: this.handlePokemon}}>
                 {this.props.children}
