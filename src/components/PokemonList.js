@@ -15,7 +15,7 @@ function PokemonList (props) {
             <div className="Container">
                 {props.pokemons.map((pokemon, index) => 
                     <div key={index} className="Pokemon">
-                        <Link to={{pathname: `/detail/${pokemon.name}`}}>
+                        <Link className="Image" to={{pathname: `/detail/${pokemon.name}`}}>
                             <img src={pokemon.image} alt="pokemon"/>
                         </Link>
                         <p>{pokemon.name}</p>

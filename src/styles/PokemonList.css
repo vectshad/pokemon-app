@@ -15,12 +15,40 @@
 .Pokemon {
     border-bottom: 2px solid #636363;
     border-radius: 2px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .Pokemon:last-child {
     border-bottom: 0;
 }
 
+.Image {
+    grid-column: 3/11;
+}
+
+.Pokemon button {
+    grid-column: 11/12;
+    margin-top: 40px;
+    margin-right: 0;
+    background: #ef5350;
+    color: white;
+    border: 1px solid #636363;
+    border-radius: 5px;
+    height: 40%;
+    cursor: pointer;
+}
+
+.Pokemon button:hover {
+    background: #bb3a38;
+}
+
+
+
+.Pokemon p {
+    grid-column: 4/10;
+    grid-row: 2;
+}
 /* small tablet styles */
 @media screen and (min-width: 620px) {
 

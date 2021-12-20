@@ -5,6 +5,12 @@ import { PokemonContext } from "../contexts/PokemonContext";
 
 function MyPokemonList () {
     const pokemons = useContext(PokemonContext);
+    const { handleRelease } = useContext(PokemonContext);
+    
+    const handleClick = (e) => {
+        e.preventDefault();
+        handleRelease(e.target.value)
+    }
 
     return (
         <div className="PokemonList">
@@ -18,9 +24,10 @@ function MyPokemonList () {
                 }
                 {pokemons.pokemons.map((pokemon, index) => 
                     <div key={index} className="Pokemon">
-                        <Link to={{pathname: `/detail/${pokemon.name}`}}>
+                        <Link className="Image" to={{pathname: `/detail/${pokemon.name}`}}>
                             <img src={pokemon.image} alt="pokemon"/>
                         </Link>
+                        <button onClick={handleClick} value={pokemon.nickname}>release</button>
                         <p>{pokemon.nickname}</p>
                     </div>
                 )}
