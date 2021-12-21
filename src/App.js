@@ -12,7 +12,7 @@ import PokemonContextProvider from './contexts/PokemonContext';
 
 function App() {
   const gqlVariables = {
-    limit: 20,
+    limit: 40,
     offset: 0,
   };
   
