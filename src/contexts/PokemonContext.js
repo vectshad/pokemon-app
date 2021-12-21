@@ -25,7 +25,7 @@ class PokemonContextProvider extends Component {
             array.splice(index, 1)
             this.setState({
                 pokemons: array
-            })
+            }, () => localStorage.setItem("pokemons", JSON.stringify(this.state.pokemons)))
         }
     }
     render () {
