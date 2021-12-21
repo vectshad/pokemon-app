@@ -9,6 +9,11 @@ body {
   overflow-x: hidden;
 }
 
+.App {
+  overflow-x: hidden;
+  width: 100% ;
+  position: relative;
+}
 
 /* .App {
   text-align: center;

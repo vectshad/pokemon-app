@@ -8,6 +8,8 @@
     align-items: center;
     display: flex;
     border-bottom: 2px solid #636363;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .navbar button {
