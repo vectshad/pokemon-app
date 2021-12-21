@@ -16,5 +16,5 @@ You may also see any lint errors in the console.
 
 ### Deployment
 
-Deployed use Firebase
+Deployed use Firebase \
 Hosting URL: https://pokemon-app-b0bf9.web.app 
