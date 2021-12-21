@@ -87,7 +87,7 @@ function PokemonDetail () {
                     )}
                 </div>
                 <h3>Moves</h3>
-                <div>
+                <div className="Moves">
                     {data.pokemon.moves.map((move, index) =>
                         <p key={index}>{move.move.name}</p>
                     )}
