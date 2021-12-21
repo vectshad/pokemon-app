@@ -10,7 +10,7 @@ import { PokemonContext } from "../contexts/PokemonContext";
 
 function PokemonDetail () {
     const { name } = useParams();
-    const { handlePokemon } = useContext(PokemonContext);
+    const pokemons = useContext(PokemonContext);
     const navigate = useNavigate()
 
     const gqlDetailVariables = {
@@ -24,20 +24,33 @@ function PokemonDetail () {
             nickname: "",
             image: data.pokemon.sprites.front_default
         }
-        const probabilty = (Math.random() < 0.5 ? 0 : 1);
+        var probabilty = (Math.random() < 0.5 ? 0 : 1);
         var nickname = "";
+        var check = false;
         if (probabilty === 1) {
-            const alert = prompt("Success !!! \nGive the Pokemon a nickname!!!");
-            if (alert === null || alert === "") {
-                nickname = data.pokemon.name;
-            } else {
-                nickname = alert;
+            var prom = prompt("Success !!! \nGive the Pokemon a nickname!!!");
+            while (nickname === "") {
+                check = false;
+                for (var i = 0; i < pokemons.pokemons.length; i++) {
+                    if (prom === pokemons.pokemons[i].nickname) {
+                        prom = prompt("Already used !!! \n Use another nickname!!!");
+                        check = true;
+                        break;
+                    }
+                }
+                if (!check) {
+                    if (prom === null || prom === "") {
+                        prom = data.pokemon.name;
+                    } else {
+                        nickname = prom
+                    }
+                }
             }
             pokemon.nickname = nickname            
             // console.log(pokemon)
-            handlePokemon(pokemon)
+            pokemons.handlePokemon(pokemon)
         } else {
-            alert("Failed :(")
+            alert("Failed :(");
         }
         
         
