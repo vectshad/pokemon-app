@@ -49,17 +49,64 @@
     margin: 0 15px;
 }
 
+.Moves {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-
+    .Detail {
+        width: 80%;
+    }
+    .Detail img {
+        width: 40%;
+    }
+    .Moves {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .Back {
+        grid-column: 2/3;
+    }
+    .PokemonDetail h2{
+        grid-column: 5/9;
+    }
 }
 
 /*  large tablets & laptop styles */
 @media screen and (min-width: 960px) {
-    
+    .Detail {
+        width: 75%;
+    }
+    .Detail img {
+        width: 30%;
+    }
+    .Moves {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .Back {
+        grid-column: 2/4;
+    }
+    .PokemonDetail h2{
+        grid-column: 5/9;
+    }
 }
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
-    
+    .Detail {
+        width: 70%;
+    }
+    .Detail img {
+        width: 20%;
+    }
+    .Moves {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .Back {
+        grid-column: 0/3;
+    }
+    .PokemonDetail h2{
+        grid-column: 4/10;
+    }
 }

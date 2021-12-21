@@ -51,15 +51,21 @@
 }
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-
+    .Container {
+        width: 80%;
+    }
 }
 
 /*  large tablets & laptop styles */
 @media screen and (min-width: 960px) {
-    
+    .Container {
+        width: 75%;
+    }
 }
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
-    
+    .Container {
+        width: 70%;
+    }
 }

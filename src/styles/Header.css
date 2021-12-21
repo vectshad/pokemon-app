@@ -25,21 +25,15 @@
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-    p {
-        background: yellow;
-    }
+
 }
 
 /*  large tablets & laptop styles */
 @media screen and (min-width: 960px) {
-    p {
-        background: blue;
-    }
+
 }
 
 /* desktop styles */
 @media screen and (min-width: 1200px) {
-    p {
-        background: green;
-    }
+
 }
