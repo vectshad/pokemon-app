@@ -16,7 +16,7 @@ Built in December 2021.
 - React Router v6
 - React Context for state, saved in `localStorage`
 - Font Awesome icons
-- Firebase Hosting, deployed by GitHub Actions on push to `main`
+- Firebase Hosting (the automatic GitHub Actions deploy was removed because its credentials no longer work)
 
 ## Features
 
